@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    --native-white: #f4f2f3;
+    --native-pink: #c0a9bd;
+    --native-gray: #94a7ae;
+    --native-green: #64766a;
+}
+
+body {
+    background-color: var(--native-pink);
+}
+
+.root {
+    margin: 5px auto;
+    width: 40vw;
+    color: var(--native-green);
+    background-color: var(--native-gray);
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+/*.inner-ul {*/
+/*    padding-left: 40px;*/
+/*}*/
+ul {
+    padding-left: 40px;
+}

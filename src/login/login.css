@@ -19,10 +19,14 @@ body {
 }
 
 .main {
+    position: relative;
     width: 40%;
     height: 70%;
     background-color: var(--native-gray);
     border-radius: 20px;
+    animation-name: anim;
+    animation-duration: 1.75s;
+    animation-timing-function: linear;
 }
 
 .title {
@@ -60,4 +64,15 @@ input[type="checkbox"] {
 
 .block {
     display: block;
+}
+
+@keyframes anim {
+    from {
+        top: -100vh;
+        scale: 0.3;
+    }
+    to {
+        top: 0;
+        scale: 1;
+    }
 }

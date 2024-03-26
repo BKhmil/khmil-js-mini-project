@@ -11,6 +11,16 @@ body {
     background-color: var(--native-pink);
 }
 
+.logout {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
 .root {
     margin: 5px auto;
     width: 65vw;

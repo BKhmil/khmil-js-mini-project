@@ -55,6 +55,7 @@ btnSend.innerText = 'LOGIN';
 btnSend.onclick = e => {
     e.preventDefault();
 
+    localStorage.setItem('isLogin', 'true');
     window.location.href = '../../index.html';
 };
     // form end

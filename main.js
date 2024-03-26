@@ -33,22 +33,30 @@ class User {
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('isLogin', 'true');
-    if (!localStorage.getItem('isLogin') || localStorage.getItem('isLogin') === 'false') {
-        // setTimeout(() => window.location.href = './src/login/login.html', 1000);
-        window.location.href = './src/login/login.html';
-    } else {
-        const root = document.createElement('div');
-        root.classList.add('root');
-        document.body.appendChild(root);
+const btnLogOut = document.createElement('button');
+btnLogOut.classList.add('logout');
+btnLogOut.innerText = 'LOGOUT';
 
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(dataArray => {
-                dataArray.forEach(({id, name}) => {
-                    new User(id, name, 'h1', 'h1', ['id', 'name', 'btn-details', 'user'], root).build();
-                });
+btnLogOut.onclick = () => {
+    localStorage.setItem('isLogin', 'false');
+    window.location.href = './src/login/login.html';
+};
+
+document.body.appendChild(btnLogOut);
+
+if (!localStorage.getItem('isLogin') || localStorage.getItem('isLogin') === 'false') {
+    // setTimeout(() => window.location.href = './src/login/login.html', 1000);
+    window.location.href = './src/login/login.html';
+} else {
+    const root = document.createElement('div');
+    root.classList.add('root');
+    document.body.appendChild(root);
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(dataArray => {
+            dataArray.forEach(({id, name}) => {
+                new User(id, name, 'h1', 'h1', ['id', 'name', 'btn-details', 'user'], root).build();
             });
-    }
-});
+        });
+}

@@ -53,7 +53,6 @@ const showUserInfo = parentHTML => {
                     for (const outerKey in obj[key]) {
                         if (typeof obj[key][outerKey] === 'object') {
                             const divUlInnerTitle = document.createElement('li');
-                            // divUlInnerTitle.classList.add('inner-title');
                             divUlInnerTitle.innerText = outerKey + ': ';
 
                             const ulInner = document.createElement('ul');
@@ -84,19 +83,22 @@ const showUserInfo = parentHTML => {
             // user-info rendering end
 
             const btnUserPostsView = document.createElement('button');
-            btnUserPostsView.classList.add('btn-posts-view');
+            btnUserPostsView.classList.add('btn-posts-view', 'btn');
             btnUserPostsView.innerText = 'Posts of current user';
             btnUserPostsView.onclick = () => {
                 fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
                     .then(response => response.json())
                     .then(postsArray => {
                         const divPosts = document.createElement('div');
+                        divPosts.classList.add('posts');
 
-                        // posts start
-                        postsArray.forEach(({title}) => new Post(title, 'h1', ['clock', 'cock', 'block'], divPosts).build());
-                        // posts end
+                        postsArray.forEach(({title}) => new Post(title, 'h2', ['post', 'post-title', 'btn'], divPosts).build());
 
                         document.body.appendChild(divPosts);
+
+                        // scrolling to posts block
+                        const postsOffsetTop = divPosts.offsetTop;
+                        window.scrollTo({top: postsOffsetTop, behavior: 'smooth'});
                     });
             };
 

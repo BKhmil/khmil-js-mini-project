@@ -34,7 +34,7 @@ class User {
 }
 
 const btnLogOut = document.createElement('button');
-btnLogOut.classList.add('logout');
+btnLogOut.classList.add('btn-logout');
 btnLogOut.innerText = 'LOGOUT';
 
 btnLogOut.onclick = () => {

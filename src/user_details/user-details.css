@@ -9,20 +9,100 @@
 
 body {
     background-color: var(--native-pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.root {
-    margin: 5px auto;
-    width: 40vw;
+.btn-special {
+    display: block;
+    position: absolute;
+    width: fit-content;
+    padding: 5px;
+    cursor: pointer;
+    top: 5px;
     color: var(--native-green);
     background-color: var(--native-gray);
-    font-size: 1.5rem;
+    border: 2px solid var(--native-green);
+    outline: none;
+    font-size: 1.3rem;
+}
+
+.btn-logout {
+    right: 5px;
+}
+
+.btn-prev {
+    left: 5px;
+}
+
+.main-element {
+    color: var(--native-green);
+    background-color: var(--native-gray);
+    margin-top: 10px;
+    width: 40vw;
     padding: 5px;
 }
 
-/*.inner-ul {*/
-/*    padding-left: 40px;*/
-/*}*/
+.root {
+    font-size: 1.6rem;
+}
+
 ul {
     padding-left: 40px;
 }
+
+.btn {
+    background-color: var(--native-gray);
+    outline: none;
+    color: var(--native-white);
+    border: 2px solid transparent;
+    font-size: 1.3rem;
+}
+
+.btn-posts-view {
+    position: absolute;
+    /*Кнопка нижчє, на 90% ширини сторінки*/   /* на скільки я розумію, то нижче 90% від висоти, бо якщо ширини, то дуже багато вільного місця*/
+    top: 90vh;
+    font-size: 28px;
+    padding: 5px;
+}
+
+.btn-posts-view:hover, .btn:hover {
+    border-color: var(--native-white);
+    cursor: pointer;
+}
+
+.posts {
+    width: 80vw;
+    margin-top: 20vh;
+    background-color: var(--native-gray);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.post {
+    width: 18%;
+    height: 150px;
+    border: 2px solid var(--native-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.post-title {
+    font-weight: 400;
+    text-align: center;
+    color: var(--native-green);
+}
+
+.text-center {
+    text-align: center;
+}
+

@@ -11,14 +11,19 @@ body {
     background-color: var(--native-pink);
 }
 
-.logout {
+.btn-logout {
     display: block;
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 100px;
-    height: 40px;
+    width: fit-content;
+    padding: 5px;
     cursor: pointer;
+    color: var(--native-green);
+    background-color: var(--native-gray);
+    border: 2px solid var(--native-green);
+    outline: none;
+    font-size: 1.3rem;
 }
 
 .root {
@@ -48,8 +53,6 @@ body {
 
 .btn-details:hover {
     border: var(--native-white) solid;
-
-
 }
 
 .user {

@@ -44,7 +44,6 @@ btnLogOut.onclick = () => {
 document.body.appendChild(btnLogOut);
 
 if (!localStorage.getItem('isLogin') || localStorage.getItem('isLogin') === 'false') {
-    // setTimeout(() => window.location.href = './src/login/login.html', 1000);
     window.location.href = './src/login/login.html';
 } else {
     const root = document.createElement('div');

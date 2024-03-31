@@ -36,7 +36,6 @@ class User {
 const btnLogOut = document.createElement('button');
 btnLogOut.classList.add('btn-logout');
 btnLogOut.innerText = 'LOGOUT';
-
 btnLogOut.onclick = () => {
     localStorage.setItem('isLogin', 'false');
     window.location.href = './src/login/login.html';

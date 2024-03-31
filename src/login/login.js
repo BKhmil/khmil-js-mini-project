@@ -36,19 +36,6 @@ inputPassword.classList.add('block', 'form-font-size');
 inputPassword.placeholder = '********';
             // password end
 
-            // checkBox start
-const divCheckBoxWrapper = document.createElement('div');
-
-const checkBox = document.createElement('input');
-checkBox.setAttribute('id', 'remember');
-checkBox.type = 'checkBox';
-
-const labelCheckBox = document.createElement('label');
-labelCheckBox.setAttribute('for', 'remember');
-labelCheckBox.classList.add('form-font-size');
-labelCheckBox.innerText = 'Remember me';
-            // checkBox end
-
 const btnSend = document.createElement('button');
 btnSend.innerText = 'LOGIN';
 
@@ -60,11 +47,8 @@ btnSend.onclick = e => {
 };
     // form end
 
-const divCompany = document.createElement('div');
-
 // APPENDINGS
-divCheckBoxWrapper.append(checkBox, labelCheckBox);
-form.append(labelEmail, inputEmail, labelPassword, inputPassword, divCheckBoxWrapper, btnSend);
-divBlock.append(h1Title, form, divCompany);
+form.append(labelEmail, inputEmail, labelPassword, inputPassword, btnSend);
+divBlock.append(h1Title, form);
 divMainWrapper.appendChild(divBlock);
 document.body.appendChild(divMainWrapper);
